@@ -1,16 +1,61 @@
-﻿<Properties StartupConfiguration="{79A8FC96-9C01-405D-9E80-DD01BF705CBF}|Default">
-  <MonoDevelop.Ide.Workbench ActiveDocument="6002CEM_HelenaTorrinha/.gitignore">
+﻿<Properties StartupConfiguration="{91A80F23-7AF1-4081-8794-1FCEC7DB9A64}|Default">
+  <MonoDevelop.Ide.Workbench ActiveDocument="Views/LoginPage.xaml.cs">
     <Files>
-      <File FileName="6002CEM_HelenaTorrinha/MainPage.xaml.cs" />
-      <File FileName="6002CEM_HelenaTorrinha/MainPage.xaml" Line="1" Column="1" />
-      <File FileName="6002CEM_HelenaTorrinha/.gitignore" Line="18" Column="1" />
+      <File FileName="MainPage.xaml.cs" Line="1" Column="1" />
+      <File FileName="MainPage.xaml" Line="1" Column="1" />
+      <File FileName="App.xaml.cs" />
+      <File FileName="AppShell.xaml.cs" />
+      <File FileName="MauiProgram.cs" Line="34" Column="1" />
+      <File FileName="Interfaces/IAppState.cs" />
+      <File FileName="Interfaces/IDatabaseService.cs" />
+      <File FileName="Interfaces/IQuoteService.cs" />
+      <File FileName="Models/QuoteModel.cs" />
+      <File FileName="Models/User.cs" />
+      <File FileName="Properties/launchSettings.json" />
+      <File FileName="Services/DatabaseService.cs" />
+      <File FileName="Services/QuoteRealService.cs" />
+      <File FileName="Services/StubQuoteService.cs" />
+      <File FileName="ViewModels/AppShellViewModel.cs" />
+      <File FileName="../../../.nuget/packages/communitytoolkit.maui/7.0.1/readme.txt" />
+      <File FileName="ViewModels/BaseViewModel.cs" />
+      <File FileName="ViewModels/BaseViewModelMoreSimple.cs" />
+      <File FileName="ViewModels/BmiPageViewModel.cs" />
+      <File FileName="ViewModels/ClassicMauiPageViewModel.cs" />
+      <File FileName="ViewModels/LoginPageViewModel.cs" Line="17" Column="16" />
+      <File FileName="ViewModels/QuoteGeneratorPageViewModel.cs" />
+      <File FileName="ViewModels/SavedQuotesViewModel.cs" />
+      <File FileName="Views/BmiPage.xaml" Line="4" Column="55" />
+      <File FileName="Views/BmiPage.xaml.cs" Line="1" Column="1" />
+      <File FileName="Views/ClassicMauiPage.xaml" Line="1" Column="1" />
+      <File FileName="Views/ClassicMauiPage.xaml.cs" />
+      <File FileName="Views/LoginPage.xaml" Line="13" Column="1" />
+      <File FileName="Views/LoginPage.xaml.cs" Line="9" Column="1" />
+      <File FileName="AppShell.xaml" />
+      <File FileName="App.xaml" />
+      <File FileName="Views/QuoteGeneratorPage.xaml" />
+      <File FileName="Views/QuoteGeneratorPage.xaml.cs" Line="1" Column="1" />
+      <File FileName="Views/SavedQuotes.xaml" />
+      <File FileName="Views/SavedQuotes.xaml.cs" Line="1" Column="1" />
+      <File FileName="AppState.cs" />
+      <File FileName="Constants.cs" />
+      <File FileName="6002CEM_HelenaTorrinha.csproj" />
     </Files>
     <Pads>
       <Pad Id="ProjectPad">
         <State name="__root__">
-          <Node name="6002CEM_HelenaTorrinha" expanded="True">
+          <Node name="6002CEM_HelenaTorrinha">
             <Node name="6002CEM_HelenaTorrinha">
-              <Node name=".gitignore" selected="True" />
+              <Node name="ViewModels" expanded="True" />
+              <Node name="Views" expanded="True">
+                <Node name="BmiPage.xaml" expanded="True" />
+                <Node name="ClassicMauiPage.xaml" expanded="True" />
+                <Node name="LoginPage.xaml">
+                  <Node name="LoginPage.xaml.cs" selected="True" />
+                </Node>
+                <Node name="QuoteGeneratorPage.xaml" expanded="True" />
+                <Node name="SavedQuotes.xaml" expanded="True" />
+              </Node>
+              <Node name="MainPage.xaml" expanded="True" />
             </Node>
           </Node>
         </State>
@@ -18,11 +63,12 @@
     </Pads>
   </MonoDevelop.Ide.Workbench>
   <MultiItemStartupConfigurations />
-  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
   <MonoDevelop.Ide.DebuggingService.Breakpoints>
     <BreakpointStore />
   </MonoDevelop.Ide.DebuggingService.Breakpoints>
-  <MonoDevelop.Ide.ItemProperties.6002CEM__HelenaTorrinha FirstBuild="True" PreferredExecutionTarget="MonoDevelop.IPhone.IPhoneDeviceTarget" />
-  <Xamarin.Addins.Core.Project ActiveDebugTarget="MonoDevelop.IPhone.IPhoneDeviceTarget" />
+  <MonoDevelop.MonoDroid LastDeploySdkVersion="34.0.79" />
+  <Xamarin.Addins.Core.Project ActiveDebugTarget="MyAppleMacCatalystID" />
   <MonoDevelop.Ide.DebuggingService.PinnedWatches />
+  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
+  <MonoDevelop.Ide.ItemProperties.6002CEM__HelenaTorrinha PreferredExecutionTarget="MyAppleMacCatalystID" />
 </Properties>
