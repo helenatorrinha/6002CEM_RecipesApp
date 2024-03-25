@@ -66,7 +66,7 @@ public class LoginPageViewModel : BaseViewModel
             var response = await _supabaseClient.Auth.SignIn(Email, Password);
             
             // go to articles page if login is successful
-            await Shell.Current.GoToAsync("//BmiPage");
+            await Shell.Current.GoToAsync("//AddRecipePage");
         }
         // Handle invalid email or password error from Supabase
         catch (Supabase.Gotrue.Exceptions.GotrueException e)

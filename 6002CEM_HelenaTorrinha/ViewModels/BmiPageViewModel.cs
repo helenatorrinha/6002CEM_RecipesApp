@@ -8,7 +8,6 @@ namespace _6002CEM_HelenaTorrinha.ViewModels
     {
         private readonly IQuoteService _quoteService;
         public ICommand CalculateBmiCommand { get; set; }
-        public ICommand NavigateToClassicMauiPageCommand { get; set; }
         public double Bmi
         {
             get => Get<double>();
@@ -40,12 +39,6 @@ namespace _6002CEM_HelenaTorrinha.ViewModels
         {
             _quoteService = quoteService;
             CalculateBmiCommand = new Command(execute: CalculateBmi, canExecute: CalculateBmiShouldBeEnabled);
-            NavigateToClassicMauiPageCommand = new Command(execute: async () => await NavigateToClassicMauiPage());
-        }
-
-        private async Task NavigateToClassicMauiPage()
-        {
-            await Shell.Current.GoToAsync("/ClassicMauiPage");
         }
 
         private bool CalculateBmiShouldBeEnabled()
