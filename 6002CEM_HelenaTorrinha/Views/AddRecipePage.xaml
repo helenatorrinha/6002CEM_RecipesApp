@@ -10,6 +10,10 @@
 
     <ScrollView>
         <VerticalStackLayout Spacing="20" Padding="30">
+            <Label Text="Add New Recipe"
+                   HorizontalOptions="Center"
+                   FontSize="30"
+                   FontAttributes="Bold"/>
 
             <!-- Name -->
             <Label FontFamily="Consolas" Text="Name"/>

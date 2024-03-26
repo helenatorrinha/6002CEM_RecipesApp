@@ -4,7 +4,6 @@ using _6002CEM_HelenaTorrinha.Interfaces;
 using _6002CEM_HelenaTorrinha.Models;
 using Newtonsoft.Json;
 using Supabase;
-using static Android.Graphics.ColorSpace;
 
 namespace _6002CEM_HelenaTorrinha.ViewModels;
 
@@ -120,7 +119,7 @@ public class RegisterPageViewModel : BaseViewModel
             {
                 //Insert the user in the 'users' table
                 var databaseResponse = await _supabaseClient.From<UserDatabase>().Insert(user);
-                if (databaseResponse == null) 
+                if (databaseResponse == null)
                 {
                     await Shell.Current.DisplayAlert("Error", "User not created", "OK");
                 }
