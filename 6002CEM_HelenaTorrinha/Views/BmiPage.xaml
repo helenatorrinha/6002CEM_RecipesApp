@@ -130,10 +130,6 @@
                     HorizontalOptions="FillAndExpand"
                     Text="Calculte BMI"
                     Command="{Binding CalculateBmiCommand}" />
-            <Button VerticalOptions="StartAndExpand"
-                    HorizontalOptions="FillAndExpand"
-                    Text="Navigate to Classic MAUI page"
-                    Command="{Binding NavigateToClassicMauiPageCommand}" />
         </StackLayout>
     </Grid>
 </ContentPage>

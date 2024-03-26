@@ -25,10 +25,10 @@
         ContentTemplate="{DataTemplate views:LoginPage}"
         Route="login" />
 
-    <Tab Title="BmiPage">
+    <Tab Title="AddRecipe">
         <ShellContent
-            ContentTemplate="{DataTemplate views:BmiPage}"
-            Route="BmiPage" />
+            ContentTemplate="{DataTemplate views:AddRecipe}"
+            Route="AddRecipePage" />
     </Tab>
     <Tab Title="Quote Generator">
         <ShellContent
