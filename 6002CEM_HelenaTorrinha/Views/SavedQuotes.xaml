@@ -1,0 +1,52 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:xaml="http://schemas.mauimicromvvm.com/2022/dotnet/maui"
+             xmlns:viewModels="clr-namespace:_6002CEM_HelenaTorrinha.ViewModels"
+             xmlns:models="clr-namespace:_6002CEM_HelenaTorrinha.Models"
+             x:Class="_6002CEM_HelenaTorrinha.Views.SavedQuotes"
+             xaml:MauiMicro.Autowire="True"
+             x:DataType="viewModels:SavedQuotesViewModel"
+             >
+    <ScrollView>
+        <StackLayout VerticalOptions="FillAndExpand" HorizontalOptions="FillAndExpand">
+            <StackLayout IsVisible="{Binding ShouldShowDefaultText, Mode=TwoWay}" VerticalOptions="CenterAndExpand">
+                <Label
+                    Text="No saved Quotes here yet. Go save some"
+                    VerticalOptions="Center"
+                    HorizontalOptions="Center" />
+            </StackLayout>
+            <StackLayout IsVisible="{Binding ShouldShowPopulatedLayout}" VerticalOptions="FillAndExpand"
+                         HorizontalOptions="FillAndExpand">
+                <CollectionView
+                    x:Name="collectionView"
+                    VerticalOptions="FillAndExpand"
+                    ItemsSource="{Binding Quotes, Mode=TwoWay}">
+                    <CollectionView.ItemTemplate>
+                        <DataTemplate
+                            x:DataType="models:QuoteModel">
+                            <SwipeView>
+                                <Grid RowSpacing="5" Padding="10" RowDefinitions="Auto,Auto">
+                                    <Label Grid.Row="0" FontSize="Header" Text="{Binding Content}" />
+                                    <Label Grid.Row="1" FontSize="Small" FontAttributes="Bold, Italic"
+                                           Text="{Binding Author}" />
+                                </Grid>
+                                <SwipeView.RightItems>
+                                    <SwipeItems>
+                                        <SwipeItem Text="Edit"
+                                                   BackgroundColor="LightGreen" />
+                                        <SwipeItem Text="Delete"
+                                                   Command="{Binding Source={x:Reference collectionView}, Path=BindingContext.DeleteCommand}"
+                                                   CommandParameter="{Binding .}"
+                                                   BackgroundColor="LightPink" />
+                                    </SwipeItems>
+                                </SwipeView.RightItems>
+                            </SwipeView>
+                        </DataTemplate>
+                    </CollectionView.ItemTemplate>
+                </CollectionView>
+            </StackLayout>
+        </StackLayout>
+    </ScrollView>
+</ContentPage>
