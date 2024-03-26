@@ -5,8 +5,7 @@
              xmlns:viewModels="clr-namespace:_6002CEM_HelenaTorrinha.ViewModels"
              x:DataType="viewModels:AddRecipePageViewModel"
              x:Class="_6002CEM_HelenaTorrinha.Views.AddRecipe"
-             xaml:MauiMicro.Autowire="True"
-             Shell.FlyoutBehavior="Disabled">
+             xaml:MauiMicro.Autowire="True">
 
 
     <ScrollView>
