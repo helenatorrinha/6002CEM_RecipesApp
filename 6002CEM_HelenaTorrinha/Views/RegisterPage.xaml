@@ -6,6 +6,7 @@
              x:DataType="viewModels:RegisterPageViewModel"
              Shell.FlyoutBehavior="Disabled"
              Title="RegisterPage">
+<<<<<<< Updated upstream
     
     <StackLayout Spacing="10"  VerticalOptions="Center" HorizontalOptions="Center">
         <StackLayout HorizontalOptions="Center">
@@ -152,11 +153,146 @@
                                     </FormattedString>
                                 </Label.FormattedText>
                             </Label>
+<<<<<<< Updated upstream
                         </VerticalStackLayout>
                     </VerticalStackLayout>
+=======
+                        </VerticalStackLayout> -->
+=======
+    <Grid VerticalOptions="Center" HorizontalOptions="Center">
+        <ScrollView VerticalOptions="Center" HorizontalOptions="Center">
+            <StackLayout Spacing="10" VerticalOptions="Center" HorizontalOptions="Center">
+                <!-- Header section for Register -->
+                <StackLayout HorizontalOptions="Center">
+                    <Label Text="Register"
+                           FontSize="30"
+                           FontAttributes="Bold"
+                           TextColor="Black"
+                           FontFamily="Consolas"
+                           Margin="20,0,0,0"
+                           Padding="5"/>
+
+                    <Label Text="Create your account"
+                           TextColor="Gray"
+                           FontSize="14"
+                           Padding="5"
+                           FontAttributes="Bold" />
+                   
+>>>>>>> Stashed changes
                 </StackLayout>
-            </Frame>
-        </VerticalStackLayout>
+
+                <!-- Main form content -->
+                <Grid RowDefinitions="Auto" Margin="0,10,0,0">
+                    <VerticalStackLayout Padding="10">
+                        <Frame BorderColor="Gray"
+                               CornerRadius="10"
+                               Margin="0"
+                               Padding="8"
+                               BackgroundColor="#facfca">
+                            <StackLayout Padding="10" >
+                                <!-- Form fields -->
+
+                                <!-- Username -->
+                                <Label FontFamily="Consolas" Text="Username"/>
+                                <Frame CornerRadius="10" Padding="3" Margin="0,10,0,0">
+                                    <VerticalStackLayout>
+                                        <Entry
+                                               TextChanged="Username_TextChanged"
+                                               Text="{Binding Username}"
+                                               Margin="5,0,0,0"
+                                               Placeholder="Username"
+                                               FontSize="18">
+                                        </Entry>
+                                    </VerticalStackLayout>
+                                </Frame>
+
+                                <!-- First Name -->
+                                <Label FontFamily="Consolas" Text="First Name"/>
+                                <Frame CornerRadius="10" Padding="3" Margin="0,10,0,0">
+                                    <VerticalStackLayout>
+                                        <Entry
+                                               TextChanged="firstName_TextChanged"
+                                               Text="{Binding firstName}"
+                                               Margin="5,0,0,0"
+                                               Placeholder="Username"
+                                               FontSize="18">
+                                        </Entry>
+                                    </VerticalStackLayout>
+                                </Frame>
+
+                                <!-- Last Name -->
+                                <Label FontFamily="Consolas" Text="Last Name"/>
+                                <Frame CornerRadius="10" Padding="3" Margin="0,10,0,0">
+                                    <VerticalStackLayout>
+                                        <Entry
+                                               TextChanged="lastName_TextChanged"
+                                               Text="{Binding lastName}"
+                                               Margin="5,0,0,0"
+                                               Placeholder="Username"
+                                               FontSize="18">
+                                        </Entry>
+                                    </VerticalStackLayout>
+                                </Frame>
+
+                                <!-- Email -->
+                                <Label FontFamily="Consolas" Text="Email"/>
+                                <Frame CornerRadius="10" Padding="3" Margin="0,10,0,0">
+                                    <VerticalStackLayout>
+                                        <Entry
+                                               TextChanged="Email_TextChanged"
+                                               Text="{Binding Email}"
+                                               Margin="5,0,0,0"
+                                               Placeholder="Email"
+                                               FontSize="18">
+                                        </Entry>
+                                    </VerticalStackLayout>
+                                </Frame>
+
+                                <!-- Password -->
+                                <VerticalStackLayout Padding="0" Margin="0,5,0,0">
+                                <Label FontFamily="Consolas" Text="Password"/>
+                                    <Frame CornerRadius="10" Padding="3" Margin="0,10,0,0">
+                                        <Entry
+                                            TextChanged="Password_TextChanged"
+                                            Text="{Binding Password}"
+                                            Margin="5,0,0,0"
+                                            Placeholder="Password"
+                                            IsPassword="True"
+                                            FontSize="18">                              
+                                        </Entry>
+                                    </Frame>
+                            </VerticalStackLayout>
+
+                            <!-- Confirm Password -->
+                            <VerticalStackLayout Padding="0" Margin="0,5,0,0">
+                            <Label FontFamily="Consolas" Text="Confirm Password"/>
+                                <Frame CornerRadius="10" Padding="3" Margin="0,10,0,0">
+                                    <Entry
+                                        TextChanged="ConfirmPassword_TextChanged"
+                                        Text="{Binding ConfirmPassword}"
+                                        Margin="5,0,0,0"
+                                        Placeholder="Confirm Password"
+                                        IsPassword="True"
+                                        FontSize="18">                              
+                                    </Entry>
+                                </Frame>
+                            </VerticalStackLayout>
+
+                                <!-- Additional fields... -->
+
+                                <!-- Registration Button -->
+                                <Button Margin="0,20,0,0"
+                                        x:Name="RegisterButton"
+                                        Command="{Binding RegisterCommand}"
+                                        Text="Register"
+                                        VerticalOptions="CenterAndExpand"
+                                        HorizontalOptions="FillAndExpand"/>
+                            </StackLayout>
+                        </Frame>
+>>>>>>> Stashed changes
+                    </VerticalStackLayout>
+                </Grid>
+            </StackLayout>
+        </ScrollView>
     </Grid>
-  </StackLayout>
 </ContentPage>
