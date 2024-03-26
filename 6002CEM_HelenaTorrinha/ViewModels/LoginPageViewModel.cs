@@ -71,12 +71,7 @@ public class LoginPageViewModel : BaseViewModel
         // Handle invalid email or password error from Supabase
         catch (Supabase.Gotrue.Exceptions.GotrueException e)
         {
-            var errorData = JsonConvert.DeserializeObject<Dictionary<string, string>>(e.Message);
-
-            if (errorData.ContainsKey("error") && errorData["error"] == "invalid_grant")
-            {
-                await Shell.Current.DisplayAlert("Error", "Invalid email or password.", "OK");
-            } 
+            await Shell.Current.DisplayAlert("Error", "Invalid email or password.", "OK");
         } 
         // Handle other exceptions
         catch (Exception e)
