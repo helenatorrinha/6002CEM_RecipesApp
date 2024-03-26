@@ -1,0 +1,11 @@
+﻿namespace _6002CEM_HelenaTorrinha.Models
+{
+    public class User
+    {
+        public string Email { get; set; }
+        public string Password { get; set; }
+        public User()
+        {
+        }
+    }
+}
