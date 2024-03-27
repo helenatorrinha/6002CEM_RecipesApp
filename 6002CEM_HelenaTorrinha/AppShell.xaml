@@ -9,31 +9,32 @@
     xmlns:views="clr-namespace:_6002CEM_HelenaTorrinha.Views"
     BackgroundColor="{DynamicResource Primary}"
     Shell.TabBarBackgroundColor="{DynamicResource Primary}"
-    Shell.TabBarTitleColor="White"
-    Shell.TitleColor="White"
+    Shell.TabBarTitleColor="Black"
+    Shell.TitleColor="Black"
     Shell.FlyoutBehavior="Flyout"
     Shell.TabBarUnselectedColor="Azure"
     xaml:MauiMicro.Autowire="True"
-    x:DataType="viewModels:AppShellViewModel"
-    Title="Week7_Demo">
+    x:DataType="viewModels:AppShellViewModel">
+
     <Shell.FlyoutFooter>
         <Button Margin="5" Text="Logout" Command="{Binding LogOutCommand}" />
     </Shell.FlyoutFooter>
+
     <ShellContent
         Title="Login"
         FlyoutItemIsVisible="False"
         ContentTemplate="{DataTemplate views:LoginPage}"
         Route="login" />
 
-    <Tab Title="AddRecipe">
+    <Tab Title="Add Recipe">
         <ShellContent
             ContentTemplate="{DataTemplate views:AddRecipe}"
             Route="AddRecipePage" />
     </Tab>
-    <Tab Title="Quote Generator">
+    <Tab Title="Recipes">
         <ShellContent
-            ContentTemplate="{DataTemplate views:QuoteGeneratorPage}"
-            Route="QuoteGeneratorPage" />
+            ContentTemplate="{DataTemplate views:RecipesPage}"
+            Route="RecipesPage" />
     </Tab>
 
     <Tab Title="SavedQuotesPage">
@@ -41,4 +42,7 @@
             ContentTemplate="{DataTemplate views:SavedQuotes}"
             Route="SavedQuotesPage" />
     </Tab>
+
+    
+
 </Shell>
