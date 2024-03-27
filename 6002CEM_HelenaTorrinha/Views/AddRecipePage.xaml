@@ -7,17 +7,16 @@
              x:Class="_6002CEM_HelenaTorrinha.Views.AddRecipe"
              xaml:MauiMicro.Autowire="True">
 
-
     <ScrollView>
         <VerticalStackLayout Spacing="20" Padding="30">
-            <Label Text="Add New Recipe"
+            <Label Text="Add New Recipe 🥧"
                    HorizontalOptions="Center"
                    FontSize="30"
                    FontAttributes="Bold"/>
 
             <!-- Name -->
-            <Label FontFamily="Consolas" Text="Name"/>
-            <Frame CornerRadius="10" Padding="3" Margin="0,10,0,0">
+            <Label FontFamily="Consolas" Text="Name" Margin="10,0,0,0" FontSize="20"/>
+            <Frame CornerRadius="10" Padding="3" Margin="0,-10,0,10">
                 <Entry
                     TextChanged="Name_TextChanged"
                     Text="{Binding Name}"
@@ -29,8 +28,8 @@
             </Frame>
 
             <!-- Prep Time -->
-            <Label FontFamily="Consolas" Text="Prep Time (minutes)"/>
-            <Frame CornerRadius="10" Padding="3" Margin="0,10,0,0">
+            <Label FontFamily="Consolas" Text="Prep Time (minutes)" Margin="10,0,0,0" FontSize="20"/>
+            <Frame CornerRadius="10" Padding="3" Margin="0,-10,0,10">
                 <Entry
                     TextChanged="PrepTime_TextChanged"
                     Text="{Binding Preptime}"
@@ -42,8 +41,8 @@
             </Frame>
 
             <!-- Cook Time -->
-            <Label FontFamily="Consolas" Text="Cook Time (minutes)"/>
-            <Frame CornerRadius="10" Padding="3" Margin="0,10,0,0">
+            <Label FontFamily="Consolas" Text="Cook Time (minutes)" Margin="10,0,0,0" FontSize="20"/>
+            <Frame CornerRadius="10" Padding="3" Margin="0,0,-10,10">
                 <Entry
                     TextChanged="CookTime_TextChanged"
                     Text="{Binding Cooktime}"
@@ -55,8 +54,8 @@
             </Frame>
 
             <!-- Number of Servings -->
-            <Label FontFamily="Consolas" Text="Number of Servings"/>
-            <Frame CornerRadius="10" Padding="3" Margin="0,10,0,0">
+            <Label FontFamily="Consolas" Text="Number of Servings" Margin="10,0,0,0" FontSize="20"/>
+            <Frame CornerRadius="10" Padding="3" Margin="0,-10,0,10">
                 <Entry
                     TextChanged="Servings_TextChanged"
                     Text="{Binding Servings}"
@@ -68,55 +67,40 @@
             </Frame>
 
             <!-- Ingredients -->
-            <Frame CornerRadius="10" Padding="3" Margin="0,10,0,0">
-                <Entry
+            <Label FontFamily="Consolas" Text="Ingredients" Margin="10,0,0,0" FontSize="20"/>
+            <Frame CornerRadius="10" Padding="3" Margin="0,-10,0,10">
+                <Editor
                     TextChanged="Ingredients_TextChanged"
                     Text="{Binding Ingredients}"
                     Margin="5,0,0,0"
                     Placeholder="Ingredients"
                     HeightRequest="100"
-                    FontSize="18">                              
-                </Entry>
+                    FontSize="18"
+                    AutoSize="TextChanges">                              
+                </Editor>
             </Frame>
 
             <!-- Instructions -->
-            <Frame CornerRadius="10" Padding="3" Margin="0,10,0,0">
-                <Entry
+            <Label FontFamily="Consolas" Text="Instructions" Margin="10,0,0,0" FontSize="20"/>
+            <Frame CornerRadius="10" Padding="3" Margin="0,0,-10,10">
+                <Editor
                     TextChanged="Instructions_TextChanged"
                     Text="{Binding Instructions}"
                     Margin="5,0,0,0"
                     Placeholder="Instructions"
                     HeightRequest="150"
-                    FontSize="18">                              
-                </Entry>
+                    FontSize="18"
+                    AutoSize="TextChanges">                              
+                </Editor>
             </Frame>
 
-            <!-- Dietary Options Label -->
-            <Label Text="Dietary Options" FontAttributes="Bold" />
-
-            <!-- Dietary Options Checkboxes with Labels -->
-            <HorizontalStackLayout>
-                <CheckBox />
-                <Label Text="Egg-Free" VerticalOptions="Center" />
-            </HorizontalStackLayout>
-            
-            <HorizontalStackLayout>
-                <CheckBox />
-                <Label Text="Low Fat" VerticalOptions="Center" />
-            </HorizontalStackLayout>
-            
-            <HorizontalStackLayout>
-                <CheckBox />
-                <Label Text="Nut-Free" VerticalOptions="Center" />
-            </HorizontalStackLayout>
-            
-            <HorizontalStackLayout>
-                <CheckBox />
-                <Label Text="Vegetarian" VerticalOptions="Center" />
-            </HorizontalStackLayout>
-
             <!-- Submit Button -->
-            <Button Text="Add Recipe" VerticalOptions="End" HorizontalOptions="Fill" />
+            <Button Margin="0,20,0,0"
+                    x:Name="AddRecipeButton"
+                    Command="{Binding AddRecipeCommand}"
+                    Text="Add Recipe"
+                    VerticalOptions="CenterAndExpand"
+                    HorizontalOptions="FillAndExpand"/>
 
         </VerticalStackLayout>
     </ScrollView>
