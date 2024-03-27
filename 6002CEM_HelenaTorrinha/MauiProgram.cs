@@ -31,7 +31,9 @@ public static class MauiProgram
             .MapView<AppShell, AppShellViewModel>()
             .MapView<LoginPage, LoginPageViewModel>()
             .MapView<RegisterPage, RegisterPageViewModel>()
-            .MapView<AddRecipe, AddRecipePageViewModel>();
+            .MapView<AddRecipe, AddRecipePageViewModel>()
+            .MapView<RecipesPage, RecipesPageViewModel>()
+            .MapView<MyRecipesPage, MyRecipesPageViewModel>();
 
         builder.Services.AddSingleton<BaseViewModel>();
         builder.Services.AddSingleton<IAppState, AppState>();

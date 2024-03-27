@@ -131,6 +131,7 @@ public class AddRecipePageViewModel : BaseViewModel
                 // Redirect to login page if successful
                 await Shell.Current.DisplayAlert("Success", "Recipe added sucessfully", "OK");
                 await Shell.Current.Navigation.PopAsync();
+                await Shell.Current.GoToAsync("//RecipesPage");
             }
             catch (Exception e)
             {

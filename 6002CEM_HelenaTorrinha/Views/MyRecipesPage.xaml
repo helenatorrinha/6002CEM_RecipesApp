@@ -3,25 +3,18 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              xmlns:xaml="http://schemas.mauimicromvvm.com/2022/dotnet/maui"
              xmlns:viewModels="clr-namespace:_6002CEM_HelenaTorrinha.ViewModels"
-             x:DataType="viewModels:RecipesPageViewModel"
-             x:Class="_6002CEM_HelenaTorrinha.Views.RecipesPage"
+             x:DataType="viewModels:MyRecipesPageViewModel"
+             x:Class="_6002CEM_HelenaTorrinha.Views.MyRecipesPage"
              xaml:MauiMicro.Autowire="True">
 
     <ScrollView>
         <VerticalStackLayout Spacing="20" Padding="30">
-            <Label Text="All Recipes 🍲"
+            <Label Text="My Recipes 🍔"
                    HorizontalOptions="Center"
                    FontSize="30"
                    FontAttributes="Bold"/>
 
-            <Button Margin="20,0,0,0"
-                    x:Name="MyRecipesButton"
-                    Command="{Binding NavigateToMyRecipesPageCommand}"
-                    Text="My Recipes"
-                    VerticalOptions="CenterAndExpand"
-                    HorizontalOptions="Start"/>
-
-            <CollectionView ItemsSource="{Binding Recipes}">
+            <CollectionView ItemsSource="{Binding MyRecipes}">
                 <CollectionView.ItemTemplate>
                     <DataTemplate>
                         <StackLayout Padding="10">
