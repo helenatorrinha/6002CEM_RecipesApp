@@ -1,6 +1,5 @@
 ﻿using Microsoft.Extensions.Logging;
 using _6002CEM_HelenaTorrinha.Interfaces;
-using _6002CEM_HelenaTorrinha.Services;
 using _6002CEM_HelenaTorrinha.ViewModels;
 using _6002CEM_HelenaTorrinha.Views;
 
@@ -25,20 +24,16 @@ public static class MauiProgram
         builder.Logging.AddDebug();
 #endif
         builder.Services
-            .MapView<BmiPage, BmiPageViewModel>()
-            .MapView<QuoteGeneratorPage, QuoteGeneratorPageViewModel>()
-            .MapView<SavedQuotes, SavedQuotesViewModel>()
             .MapView<AppShell, AppShellViewModel>()
             .MapView<LoginPage, LoginPageViewModel>()
             .MapView<RegisterPage, RegisterPageViewModel>()
             .MapView<AddRecipe, AddRecipePageViewModel>()
             .MapView<RecipesPage, RecipesPageViewModel>()
-            .MapView<MyRecipesPage, MyRecipesPageViewModel>();
+            .MapView<MyRecipesPage, MyRecipesPageViewModel>()
+            .MapView<UserPage, UserPageViewModel>();
 
         builder.Services.AddSingleton<BaseViewModel>();
         builder.Services.AddSingleton<IAppState, AppState>();
-        builder.Services.AddSingleton<IQuoteService, QuoteRealService>();
-        builder.Services.AddSingleton<IDatabaseService, DatabaseService>();
 
 
         return builder.Build();

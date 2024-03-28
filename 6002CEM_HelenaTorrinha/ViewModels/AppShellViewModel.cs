@@ -18,6 +18,7 @@ public class AppShellViewModel : BaseViewModel
     private void ExecuteLogout()
     {
         _state.CurrentUser = null;
+        Models.User.Clear();
         Shell.Current.GoToAsync("//login");
     }
 }

@@ -4,12 +4,6 @@
     {
         public static string RestEndpointBase = "https://api.quotable.io";
 
-        public static class Endpoints
-        {
-            public static string RandomQuote = "/random";
-            public static string ListRandomQuotes = "/quotes";
-        }
-
         public const SQLite.SQLiteOpenFlags Flags =
               // open the database in read/write mode
               SQLite.SQLiteOpenFlags.ReadWrite |
