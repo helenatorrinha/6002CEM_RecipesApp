@@ -27,7 +27,7 @@ namespace _6002CEM_HelenaTorrinha.Models
             }
         }
 
-        public void Clear()
+        public static void Clear()
         {
             _instance = null;
         }

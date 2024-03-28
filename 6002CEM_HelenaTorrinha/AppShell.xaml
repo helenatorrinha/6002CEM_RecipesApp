@@ -37,12 +37,10 @@
             Route="RecipesPage" />
     </Tab>
 
-    <Tab Title="SavedQuotesPage">
+    <Tab Title="Account">
         <ShellContent
-            ContentTemplate="{DataTemplate views:SavedQuotes}"
-            Route="SavedQuotesPage" />
+            ContentTemplate="{DataTemplate views:UserPage}"
+            Route="UserPage" />
     </Tab>
-
-    
 
 </Shell>

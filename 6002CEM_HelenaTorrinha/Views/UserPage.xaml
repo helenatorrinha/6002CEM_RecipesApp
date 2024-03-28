@@ -1,0 +1,96 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:xaml="http://schemas.mauimicromvvm.com/2022/dotnet/maui"
+             xmlns:converters="clr-namespace:_6002CEM_HelenaTorrinha.Converters"
+             xmlns:viewModels="clr-namespace:_6002CEM_HelenaTorrinha.ViewModels"
+             xaml:MauiMicro.Autowire="True"
+             x:Class="_6002CEM_HelenaTorrinha.Views.UserPage"
+             x:DataType="viewModels:UserPageViewModel"
+             >
+    
+    <ScrollView>
+        <StackLayout Spacing="10" Padding="30">
+            <Label Text="Account Details"
+                   HorizontalOptions="Center"
+                   FontSize="30"
+                   FontAttributes="Bold"/>
+
+            <!-- Username -->
+            <Label FontSize="16">
+                <Label.FormattedText>
+                    <FormattedString>
+                        <Span Text="Username: " TextDecorations="Underline"/>
+                        <Span Text="{Binding username}"/>
+                    </FormattedString>
+                </Label.FormattedText>
+            </Label>
+
+            <!-- First Name -->
+            <Label FontSize="16">
+                <Label.FormattedText>
+                    <FormattedString>
+                        <Span Text="First Name: " TextDecorations="Underline"/>
+                        <Span Text="{Binding firstName}"/>
+                    </FormattedString>
+                </Label.FormattedText>
+            </Label>
+
+            <!-- Last Name -->
+            <Label FontSize="16">
+                <Label.FormattedText>
+                    <FormattedString>
+                        <Span Text="Last Name: " TextDecorations="Underline"/>
+                        <Span Text="{Binding lastName}"/>
+                    </FormattedString>
+                </Label.FormattedText>
+            </Label>
+
+            <!-- Email -->
+            <Label FontSize="16">
+                <Label.FormattedText>
+                    <FormattedString>
+                        <Span Text="Email: " TextDecorations="Underline"/>
+                        <Span Text="{Binding email}"/>
+                    </FormattedString>
+                </Label.FormattedText>
+            </Label>
+
+
+            <!-- Current Password -->
+            <VerticalStackLayout Padding="0" Margin="0,50,0,0">
+                <Label FontFamily="Consolas" Text="Current Password" FontSize="16"/>
+                <Frame CornerRadius="10" Padding="3" Margin="0,10,0,0">
+                    <Entry TextChanged="CurrentPassword_TextChanged"
+                            Text="{Binding CurrentPassword}"
+                            Margin="5,0,0,0"
+                            Placeholder="Current Password"
+                            IsPassword="True"
+                            FontSize="18"/>
+                </Frame>
+            </VerticalStackLayout>
+
+            <!-- New Password -->
+            <VerticalStackLayout Padding="0" Margin="0,5,0,0">
+                <Label FontFamily="Consolas" Text="New Password" FontSize="16"/>
+                <Frame CornerRadius="10" Padding="3" Margin="0,10,0,0">
+                    <Entry TextChanged="NewPassword_TextChanged"
+                            Text="{Binding NewPassword}"
+                            Margin="5,0,0,0"
+                            Placeholder="New Password"
+                            IsPassword="True"
+                            FontSize="18"/>
+                </Frame>
+            </VerticalStackLayout>
+            
+            <!-- Update Password Button -->
+                <Button  Margin="0,-550,0,0"
+                x:Name="UpdatePasswordButton"
+                Command="{Binding UserCommand}"
+                Text="Update Password"
+                VerticalOptions="CenterAndExpand"
+                HorizontalOptions="FillAndExpand"/>
+        </StackLayout>
+    </ScrollView>
+</ContentPage>

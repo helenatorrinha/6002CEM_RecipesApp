@@ -4,7 +4,6 @@ using Supabase;
 using _6002CEM_HelenaTorrinha.Models;
 using System.Collections.ObjectModel;
 using System.Windows.Input;
-using _6002CEM_HelenaTorrinha.Views;
 
 namespace _6002CEM_HelenaTorrinha.ViewModels;
 
@@ -26,7 +25,6 @@ public class RecipesPageViewModel : BaseViewModel
     public RecipesPageViewModel(ViewModelContext context, IAppState appState) : base(context)
     {
         _supabaseClient = new Client(SupabaseDetails.Url, SupabaseDetails.SupabaseKey);
-        Task.Run(() => GetPage());
         NavigateToMyRecipesPageCommand = new Command(async () => await NavigateToMyRecipesPage());
     }
 

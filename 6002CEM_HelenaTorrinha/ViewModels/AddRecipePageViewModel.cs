@@ -15,7 +15,6 @@ public class AddRecipePageViewModel : BaseViewModel
     private readonly IAppState _appState;
 
     public ICommand AddRecipeCommand { get; set; }
-    public ICommand NavigateToRegisterPageCommand { get; set; }
 
     public string Name
     {
@@ -157,10 +156,5 @@ public class AddRecipePageViewModel : BaseViewModel
             }
         }
 
-    }
-
-    private async Task NavigateToRegisterPage()
-    {
-        await Shell.Current.GoToAsync(nameof(RegisterPage));
     }
 }
