@@ -31,10 +31,17 @@
             ContentTemplate="{DataTemplate views:AddRecipe}"
             Route="AddRecipePage" />
     </Tab>
+
     <Tab Title="Recipes">
         <ShellContent
             ContentTemplate="{DataTemplate views:RecipesPage}"
             Route="RecipesPage" />
+    </Tab>
+
+    <Tab Title="Online Recipes">
+        <ShellContent
+            ContentTemplate="{DataTemplate views:RecipesAPIPage}"
+            Route="RecipesAPIPage" />
     </Tab>
 
     <Tab Title="Account">

@@ -30,7 +30,8 @@ public static class MauiProgram
             .MapView<AddRecipe, AddRecipePageViewModel>()
             .MapView<RecipesPage, RecipesPageViewModel>()
             .MapView<MyRecipesPage, MyRecipesPageViewModel>()
-            .MapView<UserPage, UserPageViewModel>();
+            .MapView<UserPage, UserPageViewModel>()
+            .MapView<RecipesAPIPage, RecipesAPIPageViewModel>();
 
         builder.Services.AddSingleton<BaseViewModel>();
         builder.Services.AddSingleton<IAppState, AppState>();
