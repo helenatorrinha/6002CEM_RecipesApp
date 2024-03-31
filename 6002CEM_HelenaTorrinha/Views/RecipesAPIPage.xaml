@@ -17,61 +17,25 @@
             <CollectionView ItemsSource="{Binding Recipes}">
                 <CollectionView.ItemTemplate>
                     <DataTemplate>
-                        <StackLayout Padding="10" >
-                            <StackLayout.GestureRecognizers>
-                                <TapGestureRecognizer 
-                                    Command="{Binding Source={RelativeSource AncestorType={x:Type viewModels:RecipesAPIPageViewModel}}, Path=ItemTappedCommand}" 
-                                    CommandParameter="{Binding .}"/>
+                        <StackLayout BackgroundColor="#facfca" Margin="0,0,0,25">
+                            <StackLayout.GestureRecognizers >
+                                <TapGestureRecognizer Command="{Binding Source={RelativeSource AncestorType={x:Type viewModels:RecipesAPIPageViewModel}}, Path=ItemTappedCommand}"
+                                                      CommandParameter="{Binding .}" />
                             </StackLayout.GestureRecognizers>
 
-                            <Frame BackgroundColor="#facfca" CornerRadius="5" Padding="5" Margin="5">
-                                <VerticalStackLayout>
-                                    <!-- Image Display -->
-                                    <Image Source="{Binding image}"
-                                           Aspect="AspectFill"
-                                           HeightRequest="200"/> 
-                                    <Label Text="{Binding title}" FontAttributes="Bold" FontSize="20" HorizontalOptions="Center"/>
-                                </VerticalStackLayout>
-                            </Frame>
+                            <!-- Image Display -->
+                            <Image Source="{Binding image}"
+                                   Aspect="AspectFill"
+                                   HeightRequest="200"/> 
 
-                            <!-- Preparation Time -->
-                            <Label FontSize="16">
-                                <Label.FormattedText>
-                                    <FormattedString>
-                                        <Span Text="Ready In: " TextDecorations="Underline"/>
-                                        <Span Text="{Binding readyInMinutes, StringFormat='{0} minutes'}"/>
-                                    </FormattedString>
-                                </Label.FormattedText>
-                            </Label>
-                            <!-- Number of Servings -->
-                            <Label FontSize="16">
-                                <Label.FormattedText>
-                                    <FormattedString>
-                                        <Span Text="Servings: " TextDecorations="Underline"/>
-                                        <Span Text="{Binding servings}"/>
-                                    </FormattedString>
-                                </Label.FormattedText>
-                            </Label>
-                            <!-- Ingredients -->
-                            <Label FontSize="16">
-                                <Label.FormattedText>
-                                    <FormattedString>
-                                        <Span Text="Ingredients: " TextDecorations="Underline"/>
-                                        <Span Text="{Binding ingredients}"/>
-                                    </FormattedString>
-                                </Label.FormattedText>
-                            </Label>
-                            <!-- sourceUrl -->
-                            <Label FontSize="16">
-                                <Label.FormattedText>
-                                    <FormattedString>
-                                        <Span Text="Source: " TextDecorations="Underline"/>
-                                        <Span Text="{Binding sourceUrl}"/>
-                                    </FormattedString>
-                                </Label.FormattedText>
-                            </Label>
+                            <!-- Title Display Under the Image -->
+                            <Label Text="{Binding title}"
+                                   FontAttributes="Bold"
+                                   FontSize="20"
+                                   HorizontalOptions="Center"/>
                         </StackLayout>
                     </DataTemplate>
+
                 </CollectionView.ItemTemplate>
             </CollectionView>
 

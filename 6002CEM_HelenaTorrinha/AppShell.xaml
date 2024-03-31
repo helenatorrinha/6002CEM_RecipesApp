@@ -16,6 +16,17 @@
     xaml:MauiMicro.Autowire="True"
     x:DataType="viewModels:AppShellViewModel">
 
+    <Shell.FlyoutHeader>
+       <Label Text="Helena's Recipes 👩‍🍳"
+            TextColor="White"
+            FontAttributes="Bold"
+            FontSize="20"
+            Padding="10,30,10,30"
+            HorizontalTextAlignment="Center"
+            VerticalTextAlignment="Center"
+            BackgroundColor="#facfca" />
+    </Shell.FlyoutHeader>
+
     <Shell.FlyoutFooter>
         <Button Margin="5" Text="Logout" Command="{Binding LogOutCommand}" />
     </Shell.FlyoutFooter>
@@ -26,28 +37,31 @@
         ContentTemplate="{DataTemplate views:LoginPage}"
         Route="login" />
 
-    <Tab Title="Add Recipe">
+    <MenuItem Text="My Recipes"
+              IconImageSource="recipes.svg"
+              Command="{Binding MyRecipesCommand}" />
+
+    <MenuItem Text="Account"
+              IconImageSource="account.svg"
+              Command="{Binding AccountCommand}" />
+
+
+    <Tab Title="Add Recipe" Icon="addrecipe.svg">
         <ShellContent
             ContentTemplate="{DataTemplate views:AddRecipe}"
             Route="AddRecipePage" />
     </Tab>
 
-    <Tab Title="Recipes">
+    <Tab Title="Recipes" Icon="recipes.svg">
         <ShellContent
             ContentTemplate="{DataTemplate views:RecipesPage}"
             Route="RecipesPage" />
     </Tab>
 
-    <Tab Title="Online Recipes">
+    <Tab Title="Online Recipes" Icon="apirecipes.svg">
         <ShellContent
             ContentTemplate="{DataTemplate views:RecipesAPIPage}"
             Route="RecipesAPIPage" />
-    </Tab>
-
-    <Tab Title="Account">
-        <ShellContent
-            ContentTemplate="{DataTemplate views:UserPage}"
-            Route="UserPage" />
     </Tab>
 
 </Shell>

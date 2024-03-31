@@ -11,25 +11,22 @@ namespace _6002CEM_HelenaTorrinha.ViewModels;
 
 public class RecipesAPIPageViewModel : BaseViewModel
 {
-    private readonly Client _supabaseClient;
     public ObservableCollection<RecipeAPI> Recipes { get; set; } = new ObservableCollection<RecipeAPI>();
     private readonly HttpClient _httpClient = new HttpClient();
 
     public RecipeAPI recipe { get; set; }
+    public int id { get; set; }
     public string title { get; set; }
-    public int readyInMinutes { get; set; }
-    public int servings { get; set; }
-    public string ingredients { get; set; }
-    public string sourceUrl { get; set; }
     public string image { get; set; }
 
     public ICommand NavigateToMyRecipesPageCommand { get; set; }
 
     public ICommand ItemTappedCommand { get; private set; }
 
+    public RecipeAPI selectedRecipe { get; set; }
+
     public RecipesAPIPageViewModel(ViewModelContext context, IAppState appState) : base(context)
     {
-        _supabaseClient = new Client(SupabaseDetails.Url, SupabaseDetails.SupabaseKey);
         Task.Run(() => GetPage());
         ItemTappedCommand = new Command<RecipeAPI>(OnItemTapped);
     }
@@ -62,28 +59,22 @@ public class RecipesAPIPageViewModel : BaseViewModel
                 {
                     Recipes.Add(new RecipeAPI
                     {
-                        // Map the properties from the API response to the RecipeDatabase model
+                        // Map the properties from the API response to the RecipeAPI model
+                        id = recipe.id,
                         title = recipe.Title,
-                        readyInMinutes = recipe.ReadyInMinutes, 
-                        servings = recipe.Servings,
-                        ingredients = string.Join(", ", recipe.extendedIngredients.Select(ing => ing.original)), // Example, adjust as needed
-                        sourceUrl = recipe.sourceUrl,
                         image = recipe.image
                     });
                 }
             }
 
             Recipes = new ObservableCollection<RecipeAPI>(Recipes);
-            Console.WriteLine(jsonResponse); // For debugging, consider removing or replacing with appropriate logging
         }
         catch (Exception ex)
         {
             Console.WriteLine($"An error occurred while fetching recipes: {ex.Message}");
-            // Handle exceptions or errors as appropriate
         }
     }
 
-    // Example classes for deserialization (adjust according to the actual JSON structure)
     public class SpoonacularRandomRecipesResponse
     {
         [JsonProperty("recipes")]
@@ -93,11 +84,8 @@ public class RecipesAPIPageViewModel : BaseViewModel
     public class Recipe
     {
         // Define properties according to Spoonacular's JSON response
+        public int id { get; set; }
         public string Title { get; set; }
-        public int ReadyInMinutes { get; set; }
-        public int Servings { get; set; }
-        public string sourceUrl { get; set; }
-        public List<Ingredient> extendedIngredients { get; set; }
         public string image { get; set; }
     }
 
@@ -108,18 +96,7 @@ public class RecipesAPIPageViewModel : BaseViewModel
 
     private async void OnItemTapped(RecipeAPI item)
     {
-        if (!string.IsNullOrWhiteSpace(item.sourceUrl))
-        {
-            try
-            {
-                await Launcher.OpenAsync(new Uri(item.sourceUrl));
-            }
-            catch (Exception ex)
-            {
-                // Log or handle the error as needed
-                Console.WriteLine($"Could not open the URL: {ex.Message}");
-            }
-        }
+        await Shell.Current.GoToAsync($"/SingleRecipeAPIPage?id={item.id}");
     }
 
 }
