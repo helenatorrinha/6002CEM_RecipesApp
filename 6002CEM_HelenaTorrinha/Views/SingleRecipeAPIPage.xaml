@@ -1,0 +1,69 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:xaml="http://schemas.mauimicromvvm.com/2022/dotnet/maui"
+             xmlns:viewModels="clr-namespace:_6002CEM_HelenaTorrinha.ViewModels"
+             x:DataType="viewModels:SingleRecipeAPIPageViewModel"
+             x:Class="_6002CEM_HelenaTorrinha.Views.SingleRecipeAPIPage"
+             xaml:MauiMicro.Autowire="True">
+
+    <ScrollView>
+        <VerticalStackLayout Spacing="20" Padding="30">
+            <VerticalStackLayout.GestureRecognizers>
+                <TapGestureRecognizer Command="{Binding ItemTappedCommand}"/>
+            </VerticalStackLayout.GestureRecognizers>
+
+            <StackLayout Padding="10" >
+                            
+                <Frame BackgroundColor="#facfca" CornerRadius="5" Padding="5" Margin="5">
+                    <VerticalStackLayout>
+                        <!-- Image Display -->
+                        <Image Source="{Binding image}" Aspect="AspectFill" HeightRequest="400">
+                            <Image.GestureRecognizers>
+                                <TapGestureRecognizer Command="{Binding ItemTappedCommand}"/>
+                            </Image.GestureRecognizers>
+                        </Image>
+                        <Label Text="{Binding title}" FontAttributes="Bold" FontSize="30" HorizontalOptions="Center"/>
+                    </VerticalStackLayout>
+                </Frame>
+
+                <!-- Preparation Time -->
+                <Label FontSize="16" Margin="0, 10,0,0">
+                    <Label.FormattedText>
+                        <FormattedString>
+                            <Span Text="Ready In: " TextDecorations="Underline"/>
+                            <Span Text="{Binding readyInMinutes, StringFormat='{0} minutes'}"/>
+                        </FormattedString>
+                    </Label.FormattedText>
+                </Label>
+                <!-- Number of Servings -->
+                <Label FontSize="16">
+                    <Label.FormattedText>
+                        <FormattedString>
+                            <Span Text="Servings: " TextDecorations="Underline"/>
+                            <Span Text="{Binding servings}"/>
+                        </FormattedString>
+                    </Label.FormattedText>
+                </Label>
+                <!-- Ingredients -->
+                <Label FontSize="16">
+                    <Label.FormattedText>
+                        <FormattedString>
+                            <Span Text="Ingredients: " TextDecorations="Underline"/>
+                            <Span Text="{Binding ingredients}"/>
+                        </FormattedString>
+                    </Label.FormattedText>
+                </Label>
+                <!-- sourceUrl -->
+                <Label FontSize="16">
+                    <Label.FormattedText>
+                        <FormattedString>
+                            <Span Text="Source: " TextDecorations="Underline"/>
+                            <Span Text="{Binding sourceUrl}"/>
+                        </FormattedString>
+                    </Label.FormattedText>
+                </Label>
+            </StackLayout>
+        </VerticalStackLayout>
+    </ScrollView>
+</ContentPage>

@@ -71,22 +71,15 @@ public class LoginPageViewModel : BaseViewModel
             {
                 Models.User.Instance.Email = Email;
                 Models.User.Instance.Password = Password;
-                var responseUsers = await _supabaseClient.From<UserDatabase>().Get(); // Get the users from the database
-                var userDetails = responseUsers.Models;
 
-                for (int i = 0; i < userDetails.Count; i++)
-                {
-                    if (userDetails[i].email == Email)
-                    {
-                        Models.User.Instance.UserID = userDetails[i].id;
-                    }
-                }
-                Console.WriteLine(Models.User.Instance.UserID);
+                var databaseResponse = await _supabaseClient.From<UserDatabase>().Select("id").Where(u => u.email == Email).Get(); //Gets the user from the database
+                var userDetails = databaseResponse.Models[0].id;
+                Models.User.Instance.UserID = userDetails;
             }
 
 
-            // go to articles page if login is successful
-            await Shell.Current.GoToAsync("//AddRecipePage");
+            // go to Recipes page if login is successful
+            await Shell.Current.GoToAsync("//RecipesPage");
         }
         // Handle invalid email or password error from Supabase
         catch (Supabase.Gotrue.Exceptions.GotrueException e)

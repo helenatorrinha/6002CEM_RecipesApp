@@ -9,36 +9,59 @@
     xmlns:views="clr-namespace:_6002CEM_HelenaTorrinha.Views"
     BackgroundColor="{DynamicResource Primary}"
     Shell.TabBarBackgroundColor="{DynamicResource Primary}"
-    Shell.TabBarTitleColor="White"
-    Shell.TitleColor="White"
+    Shell.TabBarTitleColor="Black"
+    Shell.TitleColor="Black"
     Shell.FlyoutBehavior="Flyout"
     Shell.TabBarUnselectedColor="Azure"
     xaml:MauiMicro.Autowire="True"
-    x:DataType="viewModels:AppShellViewModel"
-    Title="Week7_Demo">
+    x:DataType="viewModels:AppShellViewModel">
+
+    <Shell.FlyoutHeader>
+       <Label Text="Helena's Recipes 👩‍🍳"
+            TextColor="White"
+            FontAttributes="Bold"
+            FontSize="20"
+            Padding="10,30,10,30"
+            HorizontalTextAlignment="Center"
+            VerticalTextAlignment="Center"
+            BackgroundColor="#facfca" />
+    </Shell.FlyoutHeader>
+
     <Shell.FlyoutFooter>
         <Button Margin="5" Text="Logout" Command="{Binding LogOutCommand}" />
     </Shell.FlyoutFooter>
+
     <ShellContent
         Title="Login"
         FlyoutItemIsVisible="False"
         ContentTemplate="{DataTemplate views:LoginPage}"
         Route="login" />
 
-    <Tab Title="AddRecipe">
+    <MenuItem Text="My Recipes"
+              IconImageSource="recipes.svg"
+              Command="{Binding MyRecipesCommand}" />
+
+    <MenuItem Text="Account"
+              IconImageSource="account.svg"
+              Command="{Binding AccountCommand}" />
+
+
+    <Tab Title="Add Recipe" Icon="addrecipe.svg">
         <ShellContent
             ContentTemplate="{DataTemplate views:AddRecipe}"
             Route="AddRecipePage" />
     </Tab>
-    <Tab Title="Quote Generator">
+
+    <Tab Title="Recipes" Icon="recipes.svg">
         <ShellContent
-            ContentTemplate="{DataTemplate views:QuoteGeneratorPage}"
-            Route="QuoteGeneratorPage" />
+            ContentTemplate="{DataTemplate views:RecipesPage}"
+            Route="RecipesPage" />
     </Tab>
 
-    <Tab Title="SavedQuotesPage">
+    <Tab Title="Online Recipes" Icon="apirecipes.svg">
         <ShellContent
-            ContentTemplate="{DataTemplate views:SavedQuotes}"
-            Route="SavedQuotesPage" />
+            ContentTemplate="{DataTemplate views:RecipesAPIPage}"
+            Route="RecipesAPIPage" />
     </Tab>
+
 </Shell>

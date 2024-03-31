@@ -15,7 +15,6 @@ public class AddRecipePageViewModel : BaseViewModel
     private readonly IAppState _appState;
 
     public ICommand AddRecipeCommand { get; set; }
-    public ICommand NavigateToRegisterPageCommand { get; set; }
 
     public string Name
     {
@@ -77,8 +76,8 @@ public class AddRecipePageViewModel : BaseViewModel
         _appState = appState; // Assuming you want to store this for future use
         _supabaseClient = new Client(SupabaseDetails.Url, SupabaseDetails.SupabaseKey);
         AddRecipeCommand = new Command(execute: async () => await AddRecipe(),
-                                       canExecute: () => !string.IsNullOrEmpty(Name) && Preptime > 0 &&
-                                                         Cooktime > 0 && Servings > 0 &&
+                                       canExecute: () => !string.IsNullOrEmpty(Name) && int.IsPositive(Preptime) &&
+                                                         int.IsPositive(Cooktime) && int.IsPositive(Servings) &&
                                                          !string.IsNullOrEmpty(Ingredients) && !string.IsNullOrEmpty(Instructions));
     }
 
@@ -98,8 +97,8 @@ public class AddRecipePageViewModel : BaseViewModel
     {
         
         //Check if the user filled all the fields
-        if (string.IsNullOrEmpty(Name) || int.IsPositive(Preptime) || int.IsPositive(Cooktime) ||
-            int.IsPositive(Servings) || string.IsNullOrEmpty(Ingredients) || string.IsNullOrEmpty(Instructions))
+        if (string.IsNullOrEmpty(Name) || int.IsNegative(Preptime) || int.IsNegative(Cooktime) ||
+            int.IsNegative(Servings) || string.IsNullOrEmpty(Ingredients) || string.IsNullOrEmpty(Instructions))
         {
             await Shell.Current.DisplayAlert("Error", "Make sure you fill all fields.", "OK");
             return;
@@ -111,6 +110,7 @@ public class AddRecipePageViewModel : BaseViewModel
             //The recipe we want to insert in 'recipes' table
             var recipe = new RecipeDatabase
             {
+                userID = Models.User.Instance.UserID,
                 name = Name,
                 prepTime = Preptime,
                 cookTime = Cooktime,
@@ -118,7 +118,6 @@ public class AddRecipePageViewModel : BaseViewModel
                 ingredients = Ingredients,
                 instructions = Instructions
             };
-
             try
             {
                 //Insert the user in the 'users' table
@@ -131,6 +130,7 @@ public class AddRecipePageViewModel : BaseViewModel
                 // Redirect to login page if successful
                 await Shell.Current.DisplayAlert("Success", "Recipe added sucessfully", "OK");
                 await Shell.Current.Navigation.PopAsync();
+                await Shell.Current.GoToAsync("//RecipesPage");
             }
             catch (Exception e)
             {
@@ -156,10 +156,5 @@ public class AddRecipePageViewModel : BaseViewModel
             }
         }
 
-    }
-
-    private async Task NavigateToRegisterPage()
-    {
-        await Shell.Current.GoToAsync(nameof(RegisterPage));
     }
 }

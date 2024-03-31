@@ -2,9 +2,9 @@
 
 namespace _6002CEM_HelenaTorrinha.Views;
 
-public partial class RecipesPage 
+public partial class SingleRecipeAPIPage
 {
-	public RecipesPage()
+	public SingleRecipeAPIPage()
 	{
 		InitializeComponent();
     }

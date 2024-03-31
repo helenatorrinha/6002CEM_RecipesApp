@@ -1,0 +1,45 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:xaml="http://schemas.mauimicromvvm.com/2022/dotnet/maui"
+             xmlns:viewModels="clr-namespace:_6002CEM_HelenaTorrinha.ViewModels"
+             x:DataType="viewModels:RecipesAPIPageViewModel"
+             x:Class="_6002CEM_HelenaTorrinha.Views.RecipesAPIPage"
+             xaml:MauiMicro.Autowire="True">
+
+    <ScrollView>
+        <VerticalStackLayout Spacing="20" Padding="30">
+            <Label Text="Online Recipes 🍽️"
+                   HorizontalOptions="Center"
+                   FontSize="30"
+                   FontAttributes="Bold"/>
+
+            <CollectionView ItemsSource="{Binding Recipes}">
+                <CollectionView.ItemTemplate>
+                    <DataTemplate>
+                        <StackLayout BackgroundColor="#facfca" Margin="0,0,0,25">
+                            <StackLayout.GestureRecognizers >
+                                <TapGestureRecognizer Command="{Binding Source={RelativeSource AncestorType={x:Type viewModels:RecipesAPIPageViewModel}}, Path=ItemTappedCommand}"
+                                                      CommandParameter="{Binding .}" />
+                            </StackLayout.GestureRecognizers>
+
+                            <!-- Image Display -->
+                            <Image Source="{Binding image}"
+                                   Aspect="AspectFill"
+                                   HeightRequest="200"/> 
+
+                            <!-- Title Display Under the Image -->
+                            <Label Text="{Binding title}"
+                                   FontAttributes="Bold"
+                                   FontSize="20"
+                                   HorizontalOptions="Center"/>
+                        </StackLayout>
+                    </DataTemplate>
+
+                </CollectionView.ItemTemplate>
+            </CollectionView>
+
+
+        </VerticalStackLayout>
+    </ScrollView>
+</ContentPage>
