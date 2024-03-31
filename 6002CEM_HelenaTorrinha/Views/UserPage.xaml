@@ -85,7 +85,7 @@
             </VerticalStackLayout>
             
             <!-- Update Password Button -->
-                <Button  Margin="0,-550,0,0"
+                <Button  Margin="0,-200,0,0"
                 x:Name="UpdatePasswordButton"
                 Command="{Binding UserCommand}"
                 Text="Update Password"

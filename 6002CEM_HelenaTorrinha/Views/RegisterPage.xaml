@@ -36,7 +36,7 @@
 
                             <!-- Username -->
                             <Label FontFamily="Consolas" Text="Username"/>
-                            <Frame CornerRadius="10" Padding="3" Margin="0,10,0,0">
+                            <Frame CornerRadius="10" Padding="3" Margin="0,5,0,0">
                                 <VerticalStackLayout>
                                     <Entry TextChanged="Username_TextChanged"
                                            Text="{Binding Username}"
@@ -47,8 +47,8 @@
                             </Frame>
 
                             <!-- First Name -->
-                            <Label FontFamily="Consolas" Text="First Name"/>
-                            <Frame CornerRadius="10" Padding="3" Margin="0,10,0,0">
+                            <Label FontFamily="Consolas" Text="First Name" Margin="0,10,0,0"/>
+                            <Frame CornerRadius="10" Padding="3" Margin="0,5,0,0">
                                 <VerticalStackLayout>
                                     <Entry TextChanged="firstName_TextChanged"
                                            Text="{Binding firstName}"
@@ -59,8 +59,8 @@
                             </Frame>
 
                             <!-- Last Name -->
-                            <Label FontFamily="Consolas" Text="Last Name"/>
-                            <Frame CornerRadius="10" Padding="3" Margin="0,10,0,0">
+                            <Label FontFamily="Consolas" Text="Last Name" Margin="0,10,0,0"/>
+                            <Frame CornerRadius="10" Padding="3" Margin="0,5,0,0">
                                 <VerticalStackLayout>
                                     <Entry TextChanged="lastName_TextChanged"
                                            Text="{Binding lastName}"
@@ -71,8 +71,8 @@
                             </Frame>
 
                             <!-- Email -->
-                            <Label FontFamily="Consolas" Text="Email"/>
-                            <Frame CornerRadius="10" Padding="3" Margin="0,10,0,0">
+                            <Label FontFamily="Consolas" Text="Email" Margin="0,10,0,0"/>
+                            <Frame CornerRadius="10" Padding="3" Margin="0,5,0,0">
                                 <VerticalStackLayout>
                                     <Entry TextChanged="Email_TextChanged"
                                            Text="{Binding Email}"
@@ -84,8 +84,8 @@
 
                             <!-- Password -->
                             <VerticalStackLayout Padding="0" Margin="0,5,0,0">
-                                <Label FontFamily="Consolas" Text="Password"/>
-                                <Frame CornerRadius="10" Padding="3" Margin="0,10,0,0">
+                                <Label FontFamily="Consolas" Text="Password" Margin="0,10,0,0"/>
+                                <Frame CornerRadius="10" Padding="3" Margin="0,5,0,0">
                                     <Entry TextChanged="Password_TextChanged"
                                            Text="{Binding Password}"
                                            Margin="5,0,0,0"
@@ -97,8 +97,8 @@
 
                             <!-- Confirm Password -->
                             <VerticalStackLayout Padding="0" Margin="0,5,0,0">
-                                <Label FontFamily="Consolas" Text="Confirm Password"/>
-                                <Frame CornerRadius="10" Padding="3" Margin="0,10,0,0">
+                                <Label FontFamily="Consolas" Text="Confirm Password" Margin="0,10,0,0"/>
+                                <Frame CornerRadius="10" Padding="3" Margin="0,5,0,0">
                                     <Entry TextChanged="ConfirmPassword_TextChanged"
                                            Text="{Binding ConfirmPassword}"
                                            Margin="5,0,0,0"
