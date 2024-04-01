@@ -6,7 +6,7 @@ namespace _6002CEM_HelenaTorrinha.Models
     {
         public string Email { get; set; }
         public string Password { get; set; }
-        public int UserID { get; set; }
+        public int? UserID { get; set; }
 
         private static User _instance;
 
@@ -27,9 +27,11 @@ namespace _6002CEM_HelenaTorrinha.Models
             }
         }
 
-        public static void Clear()
+        public void Clear()
         {
-            _instance = null;
+            Email = null;
+            Password = null;
+            UserID = null;
         }
     }
 }

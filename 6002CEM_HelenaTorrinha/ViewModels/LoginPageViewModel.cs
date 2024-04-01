@@ -69,6 +69,7 @@ public class LoginPageViewModel : BaseViewModel
                 await Shell.Current.DisplayAlert("Error", "Invalid email or password.", "OK");
             else
             {
+                Models.User.Instance.Clear(); //Clear the instance
                 Models.User.Instance.Email = Email;
                 Models.User.Instance.Password = Password;
 
