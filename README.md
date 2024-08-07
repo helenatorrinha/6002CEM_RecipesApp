@@ -1,4 +1,4 @@
-# 6002CEM_HelenaTorrinha
+# 6002CEM Mobile App Development - Helena's Recipes
 
 # Background and Motivation
 <p> Helena’s Recipes was born out of a personal frustration with existing recipe management apps. As a passionate cook, I often try to find apps that offer good recipe browsing experiences but they generally lacked the ability to publish my own creations, and those that allowed me to save my recipes but lacked a comprehensive database of diverse recipes. </p>
